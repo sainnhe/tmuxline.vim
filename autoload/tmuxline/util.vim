@@ -182,6 +182,7 @@ fun! tmuxline#util#create_theme_from_lightline(mode_palette)
           \'bg' : [a:mode_palette.middle[s:FG][0], a:mode_palette.middle[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.middle[s:FG])],
           \'cwin' : [a:mode_palette.left[s:BG][0], a:mode_palette.left[s:BG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.left[s:BG])],
           \'win' : [a:mode_palette.middle[s:FG][0], a:mode_palette.middle[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.middle[s:FG])]}
+    let s:DEFAULT_COLOR_AND_ATTRIBUTES = '#[fg=' . a:mode_palette.left[s:BG][0] . ']'
   else
     let theme = {
           \'a' : a:mode_palette.left[s:FG][2:4],
@@ -193,6 +194,7 @@ fun! tmuxline#util#create_theme_from_lightline(mode_palette)
           \'bg' : a:mode_palette.middle[s:FG][2:4],
           \'cwin' : a:mode_palette.left[s:BG][2:4],
           \'win' : a:mode_palette.middle[s:FG][2:4]}
+    let s:DEFAULT_COLOR_AND_ATTRIBUTES = '#[fg=' . a:mode_palette.left[s:BG][2] . ']'
   endif
   call tmuxline#util#try_guess_activity_color( theme )
   return theme
