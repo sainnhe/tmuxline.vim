@@ -181,7 +181,7 @@ fun! tmuxline#util#create_theme_from_lightline(mode_palette)
           \'z' : [a:mode_palette.right[s:FG][0], a:mode_palette.right[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.right[s:FG])],
           \'bg' : [a:mode_palette.middle[s:FG][0], a:mode_palette.middle[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.middle[s:FG])],
           \'cwin' : [a:mode_palette.left[s:BG][0], a:mode_palette.left[s:BG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.left[s:BG])],
-          \'win' : [a:mode_palette.middle[s:FG][0], a:mode_palette.middle[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.middle[s:FG])]}
+          \'win' : [a:mode_palette.left[s:BG][0], a:mode_palette.middle[s:FG][1], tmuxline#util#create_theme_from_lightline_help(a:mode_palette.middle[s:FG])]}
     let s:DEFAULT_COLOR_AND_ATTRIBUTES = '#[fg=' . a:mode_palette.left[s:BG][0] . ']'
   else
     let theme = {
